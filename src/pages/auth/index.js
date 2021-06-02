@@ -1,7 +1,12 @@
 import { Guest } from '../../components/hoc';
+import SignInPage from './sign-in';
 
 const AuthPage = () => {
-  return <div>Auth</div>;
+  return (
+    <div className="container">
+      <SignInPage />
+    </div>
+  );
 };
 
 export default Guest(AuthPage);

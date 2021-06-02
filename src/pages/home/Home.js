@@ -1,5 +1,7 @@
+import { Protected } from '../../components/hoc';
+
 const Home = () => {
-  return <div>Home</div>;
+  return <div className="container">Home</div>;
 };
 
-export default Home;
+export default Protected(Home);
