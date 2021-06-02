@@ -1,0 +1,54 @@
+import { NavLink } from 'react-router-dom';
+
+function Navigation() {
+  return (
+    <header className="p-3 bg-dark text-white">
+      <div className="container">
+        <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <NavLink
+            to="/"
+            className="d-flex align-items-center fs-2 text-white text-decoration-none">
+            Pc Parts
+          </NavLink>
+
+          <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li>
+              <NavLink
+                to="/home"
+                className="nav-link text-secondary"
+                activeClassName="text-white"
+                exact>
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/components"
+                className="nav-link text-secondary"
+                activeClassName="text-white">
+                Components
+              </NavLink>
+            </li>
+          </ul>
+
+          <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+            <input
+              type="search"
+              className="form-control form-control-dark"
+              placeholder="Search..."
+              aria-label="Search"
+            />
+          </form>
+
+          <div className="text-end">
+            <NavLink to="/auth" type="button" className="btn btn-outline-light me-2">
+              Login
+            </NavLink>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+export default Navigation;
