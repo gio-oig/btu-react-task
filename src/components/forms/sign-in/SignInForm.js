@@ -15,7 +15,7 @@ const SignInFomrm = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div class="mb-3">
           <label for="formGroupExampleInput" class="form-label">
-            Example label
+            Email
           </label>
           <Input
             type="email"
@@ -27,10 +27,10 @@ const SignInFomrm = () => {
         </div>
         <div class="mb-3">
           <label for="formGroupExampleInput2" class="form-label">
-            Another label
+            Password
           </label>
           <Input
-            type="text"
+            type="password"
             class="form-control"
             defaultValue="cityslicka"
             placeholder="Example input placeholder"
