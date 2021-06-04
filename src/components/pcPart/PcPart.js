@@ -11,17 +11,12 @@ const PcPart = ({ collectionName, pcParts }) => {
       </div>
       <div className="col-8">
         <h1>{collectionName}</h1>
-        <p>
-          პროცესორი – მიკროსქემა, რომელიც წარმოადგენს კომპიუტერის მთავარ კომპონენტს,
-          მართავს მის მუშაობას და აწარმოებს ყველა სახის გამოთვლებს, ანუ ამუშავებს
-          ინფორმაციას. კომპიუტერის სწრაფქმედება და წარმადობა დიდადაა დამოკიდებული
-          პროცესორის ტაქტურ სიხშირესა და ბირთვების რაოდენობაზე.
-        </p>
+        <p>{pcParts[collectionName].description}</p>
         <Button onClick={() => setPopupState(true)}>არჩევა</Button>
         {popupState && (
           <Popup
             title={collectionName}
-            parts={pcParts[collectionName]}
+            parts={pcParts[collectionName].items}
             close={() => setPopupState(false)}
           />
         )}

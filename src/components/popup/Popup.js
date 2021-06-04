@@ -6,8 +6,10 @@ const Popup = ({ title, parts, close }) => {
   return (
     <div className="popup-overlay">
       <div className="popup-container">
-        <h1>{title}</h1>
-        <Button onClick={close}>Close</Button>
+        <div className="d-flex justify-content-between">
+          <h1>{title}</h1>
+          <Button onClick={close}>Close</Button>
+        </div>
         <div className="row">
           {parts.map((item) => (
             <div>{item.name}</div>
