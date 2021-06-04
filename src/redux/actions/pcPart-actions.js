@@ -1,11 +1,9 @@
 import { getPcparts } from '../../components/services';
 import * as types from '../action-types';
 
-export const fetchPcParts = () => async (dispatch) => {
+export const fetchPcParts = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.PCPARTS_REQUEST });
-
-    const data = await getPcparts();
 
     dispatch({ type: types.PCPARTS_REQUEST_SUCCESS, payload: data });
   } catch (error) {

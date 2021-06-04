@@ -15,25 +15,25 @@ const SignInFomrm = () => {
     <div className="col-6">
       <h2>Sign in form</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div class="mb-3">
-          <label for="formGroupExampleInput" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="formGroupExampleInput" className="form-label">
             Email
           </label>
           <input
             type="email"
-            class="form-control"
+            className="form-control"
             defaultValue="eve.holt@reqres.in"
             placeholder="Example input placeholder"
             {...register('email', { required: true })}
           />
         </div>
-        <div class="mb-3">
-          <label for="formGroupExampleInput2" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="formGroupExampleInput2" className="form-label">
             Password
           </label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             defaultValue="cityslicka"
             placeholder="Example input placeholder"
             {...register('password', { required: true })}
