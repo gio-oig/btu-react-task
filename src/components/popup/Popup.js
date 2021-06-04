@@ -1,6 +1,6 @@
 import Button from '../shared/Buttton';
 
-import './Popup.css';
+import './index.css';
 
 const Popup = ({ title, parts, close }) => {
   return (
@@ -10,9 +10,12 @@ const Popup = ({ title, parts, close }) => {
           <h1>{title}</h1>
           <Button onClick={close}>Close</Button>
         </div>
-        <div className="row">
+        <div className="items-container">
           {parts.map((item) => (
-            <div>{item.name}</div>
+            <div>
+              <img src={`https://cp-parts.herokuapp.com${item.image}`} />
+              <div key={item.name}>{item.name}</div>
+            </div>
           ))}
         </div>
       </div>

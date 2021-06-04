@@ -1,13 +1,17 @@
 import { useState } from 'react';
 import Popup from '../popup';
 import Button from '../shared/Buttton';
+import ram from '../../assets/ram.svg';
+
 import './PcPart.css';
 const PcPart = ({ collectionName, pcParts }) => {
   const [popupState, setPopupState] = useState(false);
   return (
     <div className="row d-flex">
-      <div className="col-4">
-        <div className="image-container"></div>
+      <div className="col-4 d-flex custify-content-center align-items-center">
+        <div className="image-container align-items-center">
+          <img src={ram} />
+        </div>
       </div>
       <div className="col-8">
         <h1>{collectionName}</h1>
