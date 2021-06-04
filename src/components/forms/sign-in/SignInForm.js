@@ -1,12 +1,14 @@
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../../redux/actions/auth-actions';
 import Button from '../../shared/Buttton';
-import Input from '../../shared/Input';
 
 const SignInFomrm = () => {
   const { register, handleSubmit } = useForm();
+  const dispatch = useDispatch();
 
-  const onSubmit = async (data) => {
-    console.log(data);
+  const onSubmit = async (form) => {
+    dispatch(loginUser(form));
   };
 
   return (
@@ -17,7 +19,7 @@ const SignInFomrm = () => {
           <label for="formGroupExampleInput" class="form-label">
             Example label
           </label>
-          <Input
+          <input
             type="email"
             class="form-control"
             defaultValue="eve.holt@reqres.in"
@@ -29,7 +31,7 @@ const SignInFomrm = () => {
           <label for="formGroupExampleInput2" class="form-label">
             Another label
           </label>
-          <Input
+          <input
             type="text"
             class="form-control"
             defaultValue="cityslicka"

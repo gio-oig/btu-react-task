@@ -1,4 +1,5 @@
-const Input = ({ ...rest }) => {
+const Input = ({ register, ...rest }) => {
+  console.log(register);
   return <input {...rest} />;
 };
 
