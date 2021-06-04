@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import * as routes from '../../utils/routePaths';
 
 function Navigation() {
   return (
@@ -6,7 +7,7 @@ function Navigation() {
       <div className="container">
         <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <NavLink
-            to="/"
+            to={routes.GREETING_PATH}
             className="d-flex align-items-center fs-2 text-white text-decoration-none">
             Pc Parts
           </NavLink>
@@ -14,7 +15,7 @@ function Navigation() {
           <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li>
               <NavLink
-                to="/home"
+                to={routes.HOME_PATH}
                 className="nav-link text-secondary"
                 activeClassName="text-white"
                 exact>
@@ -41,7 +42,7 @@ function Navigation() {
           </form>
 
           <div className="text-end">
-            <NavLink to="/auth" type="button" className="btn btn-outline-light me-2">
+            <NavLink to={routes.AUTH_PATH} type="button" className="btn btn-outline-light me-2">
               Login
             </NavLink>
           </div>
