@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 import { loginUser } from '../../../redux/actions/auth-actions';
@@ -7,12 +9,24 @@ import Button from '../../shared/Buttton';
 const SignInFomrm = () => {
   const { register, handleSubmit } = useForm();
   const dispatch = useDispatch();
+  const user = useSelector((store) => store.user.user);
   const history = useHistory();
 
   const onSubmit = async (form) => {
     dispatch(loginUser(form));
-    history.replace('/home');
+    console.log('in');
   };
+
+  useEffect(() => {
+    if (user) {
+      history.replace('/home');
+    }
+    console.log(user);
+  }, [user]);
+
+  useEffect(() => {
+    console.log(history);
+  }, [history.location]);
 
   return (
     <div className="col-6">

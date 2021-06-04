@@ -1,14 +1,17 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
+import { logOut } from '../../redux/actions/auth-actions';
 import * as routes from '../../utils/routePaths';
 import Button from '../shared/Buttton';
 
 function Navigation() {
-  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const user = useSelector((store) => store.user.user);
   const history = useHistory();
 
   const handleLogOut = () => {
     localStorage.removeItem('auth_token');
+    dispatch(logOut());
     history.replace('/auth');
   };
 

@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { Redirect } from 'react-router';
 
 export const Protected = (Component) => {
   const WithAuthProtected = (props) => {
-    useEffect(() => {
-      console.log(Component);
-    }, []);
+    // useEffect(() => {
+    //   console.log(Component);
+    // }, []);
 
     const token = localStorage.getItem('auth_token');
     if (!token) {

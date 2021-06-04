@@ -10,8 +10,8 @@ import './Home.css';
 const Home = () => {
   return (
     <div className="container">
-      <div class="row">
-        <div class="col-8">
+      <div className="row">
+        <div className="col-8">
           {Object.keys(pcParts).map((key) => (
             <PcPart collectionName={key} pcParts={pcParts}></PcPart>
           ))}

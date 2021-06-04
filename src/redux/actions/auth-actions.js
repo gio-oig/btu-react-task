@@ -12,3 +12,7 @@ export const loginUser = (inputData) => async (dispatch) => {
     dispatch({ type: types.LOGIN_REQUEST_FAIL, payload: error.data });
   }
 };
+
+export const logOut = () => ({
+  type: types.LOG_OUT_USER,
+});
