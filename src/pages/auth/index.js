@@ -1,4 +1,4 @@
-import { Guest } from '../../components/hoc';
+// import { Guest } from '../../components/hoc';
 import SignInPage from './sign-in';
 
 const AuthPage = () => {
@@ -9,4 +9,4 @@ const AuthPage = () => {
   );
 };
 
-export default Guest(AuthPage);
+export default AuthPage;

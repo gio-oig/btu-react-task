@@ -4,10 +4,10 @@ import { Redirect } from 'react-router';
 export const Protected = (Component) => {
   const WithAuthProtected = (props) => {
     useEffect(() => {
-      console.log('access secured page');
+      console.log(Component);
     }, []);
 
-    const token = JSON.parse(localStorage.getItem('auth_token'));
+    const token = localStorage.getItem('auth_token');
     if (!token) {
       return <Redirect to="/auth" />;
     }

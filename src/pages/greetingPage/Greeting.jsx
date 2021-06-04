@@ -1,4 +1,4 @@
-import Guest from '../../components/hoc/guest';
+import { Guest } from '../../components/hoc';
 import { Link } from 'react-router-dom';
 import styles from './greeting-style.module.css';
 

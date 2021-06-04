@@ -8,7 +8,9 @@ export const login = async (credentials) => {
       },
       body: JSON.stringify(credentials),
     });
-    return await response.json();
+    const data = await response.json();
+    localStorage.setItem('auth_token', data.token);
+    return data.token;
   } catch (err) {
     console.trace(err);
     return [];

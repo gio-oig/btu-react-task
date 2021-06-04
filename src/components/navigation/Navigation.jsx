@@ -1,7 +1,17 @@
-import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { NavLink, useHistory } from 'react-router-dom';
 import * as routes from '../../utils/routePaths';
+import Button from '../shared/Buttton';
 
 function Navigation() {
+  const user = useSelector((state) => state.user);
+  const history = useHistory();
+
+  const handleLogOut = () => {
+    localStorage.removeItem('auth_token');
+    history.replace('/auth');
+  };
+
   return (
     <header className="p-3 bg-dark text-white">
       <div className="container">
@@ -42,9 +52,18 @@ function Navigation() {
           </form>
 
           <div className="text-end">
-            <NavLink to={routes.AUTH_PATH} type="button" className="btn btn-outline-light me-2">
-              Login
-            </NavLink>
+            {user ? (
+              <Button onClick={handleLogOut} className="btn btn-outline-light me-2">
+                Log out
+              </Button>
+            ) : (
+              <NavLink
+                to={routes.AUTH_PATH}
+                type="button"
+                className="btn btn-outline-light me-2">
+                Login
+              </NavLink>
+            )}
           </div>
         </div>
       </div>

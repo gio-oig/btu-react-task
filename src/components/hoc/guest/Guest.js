@@ -7,7 +7,7 @@ export const Guest = (Component) => {
       console.log('access secured page');
     }, []);
 
-    const token = JSON.parse(localStorage.getItem('auth_token'));
+    const token = localStorage.getItem('auth_token');
     if (token) {
       return <Redirect to="/home" />;
     }
