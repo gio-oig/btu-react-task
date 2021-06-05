@@ -1,0 +1,6 @@
+.price-container {
+  position: sticky;
+  top: 0;
+  color: #fff;
+  background-color: hsl(0, 0%, 41%);
+}

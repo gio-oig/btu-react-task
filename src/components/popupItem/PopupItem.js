@@ -4,14 +4,16 @@ import { Context } from '../../context/context';
 import './index.css';
 
 const PopupItem = ({ item, selectedItem }) => {
-  const { setSelectedPcParts } = useContext(Context);
+  const { setPrice, setSelectedPcParts } = useContext(Context);
   const handleSelectPart = () => {
+    setPrice((state) => state + item.price);
     setSelectedPcParts((state) => {
       return { ...state, [item.type]: item };
     });
   };
 
   const handleRemovePart = () => {
+    setPrice((state) => state - item.price);
     setSelectedPcParts((state) => {
       return { ...state, [item.type]: '' };
     });
@@ -23,7 +25,7 @@ const PopupItem = ({ item, selectedItem }) => {
   // selectedItem-ს მიხედვით
   if (selectedItem) {
     return (
-      <div class="row">
+      <div class="row my-5">
         <div class="col-sm-4 computer-part-left-column">
           <div
             class="computer-part-image-container"
@@ -35,12 +37,6 @@ const PopupItem = ({ item, selectedItem }) => {
         <div class="col-sm-8 computer-part-right-column">
           <div class="computer-part-title-container">
             <h1 class="font-4">Intel Core i9 10900K Processor</h1>
-          </div>
-          <div class="computer-part-description-container font-4 invisible">
-            პროცესორი – მიკროსქემა, რომელიც წარმოადგენს კომპიუტერის მთავარ
-            კომპონენტს, მართავს მის მუშაობას და აწარმოებს ყველა სახის გამოთვლებს, ანუ
-            ამუშავებს ინფორმაციას. კომპიუტერის სწრაფქმედება და წარმადობა დიდადაა
-            დამოკიდებული პროცესორის ტაქტურ სიხშირესა და ბირთვების რაოდენობაზე.
           </div>
 
           <div class="computer-part-specifications-container visible">

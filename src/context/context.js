@@ -3,17 +3,16 @@ import { createContext, useEffect, useState } from 'react';
 const Context = createContext();
 
 const ContectProvider = ({ children }) => {
+  const [price, setPrice] = useState(0);
   const [selectedPcParts, setSelectedPcParts] = useState({
     processor: '',
     motherboard: '',
     ram: '',
   });
 
-  useEffect(() => {
-    console.log(selectedPcParts);
-  }, [selectedPcParts]);
-
   const contextValues = {
+    price,
+    setPrice,
     selectedPcParts,
     setSelectedPcParts,
   };
