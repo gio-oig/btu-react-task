@@ -1,3 +1,4 @@
+import PopupItem from '../popupItem';
 import Button from '../shared/Buttton';
 
 import './index.css';
@@ -12,10 +13,7 @@ const Popup = ({ title, parts, close }) => {
         </div>
         <div className="items-container">
           {parts.map((item) => (
-            <div>
-              <img src={`https://cp-parts.herokuapp.com${item.image}`} />
-              <div key={item.name}>{item.name}</div>
-            </div>
+            <PopupItem key={item.name} item={item} />
           ))}
         </div>
       </div>

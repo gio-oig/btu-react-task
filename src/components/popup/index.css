@@ -23,7 +23,3 @@
   overflow-y: scroll;
   max-height: 90%;
 }
-
-.items-container > div {
-  border: 1px solid red;
-}
