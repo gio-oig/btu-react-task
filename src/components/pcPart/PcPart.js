@@ -1,4 +1,5 @@
 import { useContext, useState } from 'react';
+import PropTypes from 'prop-types';
 import Popup from '../popup';
 import Button from '../shared/Buttton';
 import ram from '../../assets/ram.svg';
@@ -12,24 +13,34 @@ const PcPart = ({ collectionName, pcPart }) => {
   console.log(pcPart);
   const { selectedPcParts, setSelectedPcParts } = useContext(Context);
   console.log(selectedPcParts[pcPart.type]);
+  const isNotSelected = !selectedPcParts[pcPart.type];
+
+  const openItemPopup = () => {
+    setPopupState(true);
+  };
+
+  const closeItemPopup = () => {
+    setPopupState(false);
+  };
+
   return (
     <>
-      {!selectedPcParts[pcPart.type] ? (
+      {isNotSelected ? (
         <div className="row d-flex">
           <div className="col-4 d-flex custify-content-center align-items-center">
             <div className="image-container align-items-center">
-              <img src={ram} />
+              <img src={pcPart.svg} />
             </div>
           </div>
           <div className="col-8">
             <h1>{collectionName}</h1>
             <p>{pcPart.description}</p>
-            <Button onClick={() => setPopupState(true)}>არჩევა</Button>
+            <Button onClick={openItemPopup}>არჩევა</Button>
             {popupState && (
               <Popup
                 title={collectionName}
                 parts={pcPart.items}
-                close={() => setPopupState(false)}
+                close={closeItemPopup}
               />
             )}
           </div>
@@ -39,6 +50,11 @@ const PcPart = ({ collectionName, pcPart }) => {
       )}
     </>
   );
+};
+
+PcPart.propTypes = {
+  collectionName: PropTypes.string,
+  pcPart: PropTypes.object,
 };
 
 export default PcPart;

@@ -1,6 +1,11 @@
+import processorSVG from './assets/processor.svg';
+import motherboardSVG from './assets/motherboard.svg';
+import ramSVG from './assets/ram.svg';
+
 const pcComponents = {
   processors: {
     type: 'processor',
+    svg: processorSVG,
     description:
       'პროცესორი – მიკროსქემა, რომელიც წარმოადგენს კომპიუტერის მთავარ კომპონენტს, მართავს მის მუშაობას და აწარმოებს ყველა სახის გამოთვლებს, ანუ ამუშავებს ინფორმაციას. კომპიუტერის სწრაფქმედება და წარმადობა დიდადაა დამოკიდებული პროცესორის ტაქტურ სიხშირესა და ბირთვების რაოდენობაზე.',
     items: [
@@ -60,6 +65,7 @@ const pcComponents = {
   },
   motherboard: {
     type: 'motherboard',
+    svg: motherboardSVG,
     description:
       'დედაპლატა წარმოადგენს სისტემური ბლოკის ძირითად ნაწილს, რომელიც განსაზღვრავს კომპიუტერის არქიტექტურასა და მწარმოებლურობას. მას ასევე უწოდებენ სისტემურ პლატას, ძირითად ან მთავარ პლატას. იგი აკავშირებს სხვადასხვა მოწყობილობებს პროცესორთან და არეგულირებს ამ მოწყობილობებიდან წამოსულ იმპულსებს.',
     items: [
@@ -93,7 +99,7 @@ const pcComponents = {
         type: 'motherboard',
         model: 'gigabyte',
         name: 'Gigabyte Z490 UD (rev. 1.0)',
-        image: '/images/Gigabyte-Z490-v-1.jpg',
+        image: '/images/Gigabyte-Z490-v-1.png',
         chipset: 'Intel Z490',
         memoryType: 'DDR4',
         maxMemory: 128,
@@ -106,6 +112,7 @@ const pcComponents = {
   },
   ram: {
     type: 'ram',
+    svg: ramSVG,
     description:
       'ოპერატიული მეხსიერება ინფორმაციის დროებითი საცავია, რომელშიც პროცესორის მიერ დასამუშავებელი მონაცემები და პროგრამები იწერება. რაც უფრო მეტია ოპერატიული მეხსიერების მოცულობა და ტაქტური სიხშირე, მით უფრო მაღალია კომპიუტერის წარმადობა.',
     items: [

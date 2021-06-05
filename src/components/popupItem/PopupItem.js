@@ -1,15 +1,20 @@
+import PropTypes from 'prop-types';
 import { useContext } from 'react';
 import { Context } from '../../context/context';
 
 import './index.css';
 
-const PopupItem = ({ item, selectedItem }) => {
+const PopupItem = ({ item, selectedItem, closePopup, openPopup }) => {
   const { setPrice, setSelectedPcParts } = useContext(Context);
+  // console.log('popupItem');
+  // console.log(openPopup);
+
   const handleSelectPart = () => {
     setPrice((state) => state + item.price);
     setSelectedPcParts((state) => {
       return { ...state, [item.type]: item };
     });
+    closePopup();
   };
 
   const handleRemovePart = () => {
@@ -19,79 +24,87 @@ const PopupItem = ({ item, selectedItem }) => {
     });
   };
 
+  // const handleReselectPart = () => {
+  //   openPopup();
+  // };
+
   // ეს უნდა გამოჩნდეს, რომელიმე ნაწილის არჩევის შემდეგ, ასარჩევი ნაწილის ადგილას
   // ბევრის ერთად გამოსაჩენი HTML ქვევით წერია
   // ორი return აქვს რა, ორ სხვადასხვა html-ს ვაბრუნებ ამ კომპონენტიდან
   // selectedItem-ს მიხედვით
   if (selectedItem) {
     return (
-      <div class="row my-5">
-        <div class="col-sm-4 computer-part-left-column">
+      <div className="row my-5">
+        <div className="col-sm-4 computer-part-left-column">
           <div
-            class="computer-part-image-container"
+            className="computer-part-image-container"
             data-default-image="/images/computerParts/019-processor.svg">
             <img src={`https://cp-parts.herokuapp.com${item.image}`} width="70%" />
           </div>
         </div>
 
-        <div class="col-sm-8 computer-part-right-column">
-          <div class="computer-part-title-container">
-            <h1 class="font-4">Intel Core i9 10900K Processor</h1>
+        <div className="col-sm-8 computer-part-right-column">
+          <div className="computer-part-title-container">
+            <h1 className="font-4">Intel Core i9 10900K Processor</h1>
           </div>
 
-          <div class="computer-part-specifications-container visible">
-            <div class="row">
-              <div class="col-sm-9 part-specifications">
-                <div class="part-specification">
-                  <b class="font-4">სოკეტი </b>
+          <div className="computer-part-specifications-container visible">
+            <div className="row">
+              <div className="col-sm-9 part-specifications">
+                <div className="part-specification">
+                  <b className="font-4">სოკეტი </b>
                   <span> LGA 1200</span>
                 </div>
 
-                <div class="part-specification">
-                  <b class="font-4">სიხშირე </b>
+                <div className="part-specification">
+                  <b className="font-4">სიხშირე </b>
                   <span> 3.7 Ghz</span>
                 </div>
 
-                <div class="part-specification">
-                  <b class="font-4">ბირთვები </b>
+                <div className="part-specification">
+                  <b className="font-4">ბირთვები </b>
                   <span> 10</span>
                 </div>
 
-                <div class="part-specification">
-                  <b class="font-4">ტექნოლოგიური პროცესი </b>
+                <div className="part-specification">
+                  <b className="font-4">ტექნოლოგიური პროცესი </b>
                   <span> 45nm</span>
                 </div>
 
-                <div class="part-specification">
-                  <b class="font-4">მდგომარეობა </b>
-                  <span class="font-4"> ახალი</span>
+                <div className="part-specification">
+                  <b className="font-4">მდგომარეობა </b>
+                  <span className="font-4"> ახალი</span>
                 </div>
 
-                <div class="part-specification">
-                  <b class="font-4">საწყობის ტიპი </b>
-                  <span class="font-4"> მარაგშია</span>
+                <div className="part-specification">
+                  <b className="font-4">საწყობის ტიპი </b>
+                  <span className="font-4"> მარაგშია</span>
                 </div>
 
-                <div class="part-specification">
-                  <b class="font-4">დარჩენილი ერთეულები </b>
+                <div className="part-specification">
+                  <b className="font-4">დარჩენილი ერთეულები </b>
                   <span> 1</span>
                 </div>
               </div>
-              <div class="col-sm-3 part-additional-data">
-                <div class="part-current-price-container">
-                  <span class="part-current-price">{item.price} lari</span>
+              <div className="col-sm-3 part-additional-data">
+                <div className="part-current-price-container">
+                  <span className="part-current-price">{item.price} lari</span>
                 </div>
-                <div class="part-old-price-container">
-                  <span class="part-old-price invisible"></span>
+                <div className="part-old-price-container">
+                  <span className="part-old-price invisible"></span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="computer-part-controls-container">
+          <div className="computer-part-controls-container">
+            {/* <button onClick={handleReselectPart}>
+              <i className="fas fa-retweet"></i>
+              <span className="font-3">გადარჩევა</span>
+            </button> */}
             <button onClick={handleRemovePart}>
-              <i class="fas fa-retweet"></i>
-              <span class="font-3">წაშლა</span>
+              <i className="fas fa-retweet"></i>
+              <span className="font-3">წაშლა</span>
             </button>
           </div>
         </div>
@@ -165,6 +178,13 @@ const PopupItem = ({ item, selectedItem }) => {
       </div>
     </div>
   );
+};
+
+PopupItem.propTypes = {
+  item: PropTypes.object,
+  selectedItem: PropTypes.bool,
+  openPopup: PropTypes.func,
+  closePopup: PropTypes.func,
 };
 
 export default PopupItem;
