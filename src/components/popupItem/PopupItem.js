@@ -52,7 +52,7 @@ const PopupItem = ({ item }) => {
 
       <div class="col-sm-3">
         <div class="part-current-price-container">
-          <span class="part-current-price">₾ 2150 </span>
+          <span class="part-current-price"> 2150 ლარი </span>
         </div>
 
         <div
