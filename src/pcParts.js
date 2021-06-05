@@ -1,10 +1,12 @@
 const pcComponents = {
   processors: {
+    type: 'processor',
     description:
       'პროცესორი – მიკროსქემა, რომელიც წარმოადგენს კომპიუტერის მთავარ კომპონენტს, მართავს მის მუშაობას და აწარმოებს ყველა სახის გამოთვლებს, ანუ ამუშავებს ინფორმაციას. კომპიუტერის სწრაფქმედება და წარმადობა დიდადაა დამოკიდებული პროცესორის ტაქტურ სიხშირესა და ბირთვების რაოდენობაზე.',
     items: [
       {
-        type: 'intel i9',
+        type: 'processor',
+        model: 'i9',
         name: 'Intel Core i9 10900K Processor',
         image: '/images/intel-i9.jpg',
         socket: 'LGA 1200',
@@ -16,7 +18,8 @@ const pcComponents = {
         price: 2150,
       },
       {
-        type: 'i7',
+        type: 'processor',
+        model: 'i7',
         name: 'Intel Core i7 11700K Processor',
         image: '/images/intel-i7.jpg',
         socket: 'LGA 1200',
@@ -28,7 +31,8 @@ const pcComponents = {
         price: 1650,
       },
       {
-        type: 'i5',
+        type: 'processor',
+        model: 'i5',
         name: 'Intel Core i5 11600K Processor',
         image: '/images/intel-i5.jpg',
         socket: 'LGA 1200',
@@ -40,7 +44,8 @@ const pcComponents = {
         price: 1100,
       },
       {
-        type: 'i3',
+        type: 'processor',
+        model: 'i3',
         name: 'Intel Core i3 10100F Processor',
         image: '/images/intel-i3.jpg',
         socket: 'LGA 1200',
@@ -54,11 +59,13 @@ const pcComponents = {
     ],
   },
   motherboard: {
+    type: 'motherboard',
     description:
       'დედაპლატა წარმოადგენს სისტემური ბლოკის ძირითად ნაწილს, რომელიც განსაზღვრავს კომპიუტერის არქიტექტურასა და მწარმოებლურობას. მას ასევე უწოდებენ სისტემურ პლატას, ძირითად ან მთავარ პლატას. იგი აკავშირებს სხვადასხვა მოწყობილობებს პროცესორთან და არეგულირებს ამ მოწყობილობებიდან წამოსულ იმპულსებს.',
     items: [
       {
-        type: 'gigabyte',
+        type: 'motherboard',
+        model: 'gigabyte',
         name: 'Gigabyte Z490 Vision G (rev. 1.x)',
         image: '/images/Gigabyte-Z490-v-1.png',
         chipset: 'Intel Z490',
@@ -70,7 +77,8 @@ const pcComponents = {
         price: 900,
       },
       {
-        type: 'msi',
+        type: 'motherboard',
+        model: 'msi',
         name: 'MSI MPG Z490 Gaming Plus',
         image: '/images/MSI-MPG-Z490-Gaming-Plus.jpg',
         chipset: 'Intel Z490',
@@ -82,7 +90,8 @@ const pcComponents = {
         price: 800,
       },
       {
-        type: 'gigabyte',
+        type: 'motherboard',
+        model: 'gigabyte',
         name: 'Gigabyte Z490 UD (rev. 1.0)',
         image: '/images/Gigabyte-Z490-v-1.jpg',
         chipset: 'Intel Z490',
@@ -96,10 +105,12 @@ const pcComponents = {
     ],
   },
   ram: {
+    type: 'ram',
     description:
       'ოპერატიული მეხსიერება ინფორმაციის დროებითი საცავია, რომელშიც პროცესორის მიერ დასამუშავებელი მონაცემები და პროგრამები იწერება. რაც უფრო მეტია ოპერატიული მეხსიერების მოცულობა და ტაქტური სიხშირე, მით უფრო მაღალია კომპიუტერის წარმადობა.',
     items: [
       {
+        type: 'ram',
         name: 'Corsair vengeance (2x32) 64GB DDR4 3600MHz',
         image: '/images/ram.jpg',
         size: 64,
@@ -109,6 +120,7 @@ const pcComponents = {
         price: 700,
       },
       {
+        type: 'ram',
         name: 'Corsair vengeance (2x16) 32GB DDR4 3200MHz',
         image: '/images/ram.jpg',
         size: 32,
@@ -118,6 +130,7 @@ const pcComponents = {
         price: 680,
       },
       {
+        type: 'ram',
         name: 'Kingston 8GB DDR4 2133MHz',
         image: '/images/ram.jpg',
         size: 16,
@@ -127,6 +140,7 @@ const pcComponents = {
         price: 120,
       },
       {
+        type: 'ram',
         name: 'Team Group 8GB DDR4 2400MHz',
         image: '/images/ram.jpg',
         size: 16,

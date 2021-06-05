@@ -13,7 +13,7 @@ const Home = () => {
       <div className="row">
         <div className="col-8">
           {Object.keys(pcParts).map((key) => (
-            <PcPart collectionName={key} pcParts={pcParts} key={key}></PcPart>
+            <PcPart collectionName={key} pcPart={pcParts[key]} key={key}></PcPart>
           ))}
         </div>
       </div>

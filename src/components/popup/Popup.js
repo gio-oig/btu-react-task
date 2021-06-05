@@ -13,7 +13,7 @@ const Popup = ({ title, parts, close }) => {
         </div>
         <div className="items-container">
           {parts.map((item) => (
-            <PopupItem key={item.name} item={item} />
+            <PopupItem key={item.name} item={item} selectedItem={false} />
           ))}
         </div>
       </div>
