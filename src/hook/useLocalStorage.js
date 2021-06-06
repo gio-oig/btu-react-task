@@ -12,10 +12,7 @@ const useLocalStorage = (key = '', initialValue = '') => {
 
   const setLocalStorage = (newState) => {
     try {
-      console.log(newState);
       const newValue = typeof newState === 'function' ? newState(state) : newState;
-      // newValue.push(3);
-      console.log(newValue);
       setState(newValue);
       window.localStorage.setItem(key, JSON.stringify(newValue));
     } catch (error) {

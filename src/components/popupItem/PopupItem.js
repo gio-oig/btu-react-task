@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import { useContext } from 'react';
 import { Context } from '../../context/context';
+import ItemInfo from '../itemInfo';
+import Button from '../shared/Buttton';
 
 import './index.css';
 
@@ -102,10 +104,10 @@ const PopupItem = ({ item, selectedItem, closePopup, openPopup }) => {
               <i className="fas fa-retweet"></i>
               <span className="font-3">გადარჩევა</span>
             </button> */}
-            <button onClick={handleRemovePart}>
+            <Button onClick={handleRemovePart}>
               <i className="fas fa-retweet"></i>
               <span className="font-3">წაშლა</span>
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -123,42 +125,7 @@ const PopupItem = ({ item, selectedItem, closePopup, openPopup }) => {
       <div className="col-sm-7">
         <div className="part-to-select-container">
           <h1 className="part-to-select-title font-4">{item.name}</h1>
-          <div className="part-to-select-description">
-            <div className="part-specification">
-              <b className="font-4">სოკეტი </b>
-              <span> LGA 1200</span>
-            </div>
-
-            <div className="part-specification">
-              <b className="font-4">სიხშირე </b>
-              <span> 3.7 Ghz</span>
-            </div>
-
-            <div className="part-specification">
-              <b className="font-4">ბირთვები </b>
-              <span> 10</span>
-            </div>
-
-            <div className="part-specification">
-              <b className="font-4">ტექნოლოგიური პროცესი </b>
-              <span> 45nm</span>
-            </div>
-
-            <div className="part-specification">
-              <b className="font-4">მდგომარეობა </b>
-              <span className="font-4"> ახალი</span>
-            </div>
-
-            <div className="part-specification">
-              <b className="font-4">საწყობის ტიპი </b>
-              <span className="font-4"> მარაგშია</span>
-            </div>
-
-            <div className="part-specification">
-              <b className="font-4">დარჩენილი ერთეულები </b>
-              <span> 1</span>
-            </div>
-          </div>
+          <ItemInfo item={item} />
         </div>
       </div>
 
@@ -171,9 +138,7 @@ const PopupItem = ({ item, selectedItem, closePopup, openPopup }) => {
           className="part-choose-button-container"
           data-part-id="271"
           data-part-select-uri="/configurator/selectProcessor">
-          <button className="part-choose-button font-3" onClick={handleSelectPart}>
-            დამატება
-          </button>
+          <Button onClick={handleSelectPart}>დამატება</Button>
         </div>
       </div>
     </div>
