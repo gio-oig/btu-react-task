@@ -2,7 +2,6 @@ import { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import Popup from '../popup';
 import Button from '../shared/Buttton';
-import ram from '../../assets/ram.svg';
 import { Context } from '../../context/context';
 
 import './PcPart.css';
@@ -10,9 +9,9 @@ import PopupItem from '../popupItem';
 
 const PcPart = ({ collectionName, pcPart }) => {
   const [popupState, setPopupState] = useState(false);
-  console.log(pcPart);
+  // console.log(pcPart);
   const { selectedPcParts, setSelectedPcParts } = useContext(Context);
-  console.log(selectedPcParts[pcPart.type]);
+  // console.log(selectedPcParts[pcPart.type]);
   const isNotSelected = !selectedPcParts[pcPart.type];
 
   const openItemPopup = () => {
