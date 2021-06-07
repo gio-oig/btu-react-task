@@ -47,7 +47,7 @@ const PopupItem = ({ item, selectedItem, closePopup, openPopup }) => {
 
         <div className="col-sm-8 computer-part-right-column">
           <div className="computer-part-title-container">
-            <h1 className="font-4">Intel Core i9 10900K Processor</h1>
+            <h1 className="font-4">{item.name}</h1>
           </div>
 
           <div className="computer-part-specifications-container visible">

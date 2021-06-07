@@ -9,9 +9,8 @@ import PopupItem from '../popupItem';
 
 const PcPart = ({ collectionName, pcPart }) => {
   const [popupState, setPopupState] = useState(false);
-  // console.log(pcPart);
   const { selectedPcParts, setSelectedPcParts } = useContext(Context);
-  // console.log(selectedPcParts[pcPart.type]);
+
   const isNotSelected = !selectedPcParts[pcPart.type];
 
   const openItemPopup = () => {

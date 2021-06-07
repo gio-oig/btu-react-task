@@ -16,3 +16,8 @@ export const loginUser = (inputData) => async (dispatch) => {
 export const logOut = () => ({
   type: types.LOG_OUT_USER,
 });
+
+export const setUser = (user) => ({
+  type: types.SET_LOGGED_IN_USER,
+  payload: user,
+});

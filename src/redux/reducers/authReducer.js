@@ -23,6 +23,11 @@ export const authReducer = (state = initialState, action) => {
         error: action.payload,
       };
 
+    case types.SET_LOGGED_IN_USER:
+      return {
+        user: action.payload,
+      };
+
     case types.LOG_OUT_USER:
       return initialState;
 

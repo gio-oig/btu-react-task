@@ -18,8 +18,8 @@ const ItemInfo = ({ item }) => {
     condition,
     left,
   } = item;
-
-  if (type === 'processor') {
+  // რამიც იყოს ჯერ და მერე შევცვლი
+  if (type === 'processor' && 'ram') {
     return (
       <div className="part-to-select-description">
         <div className="part-specification">
