@@ -14,12 +14,13 @@ const ItemInfo = ({ item }) => {
     formFactore,
     frequency,
     core,
+    size,
     nanometers,
     condition,
     left,
   } = item;
-  // რამიც იყოს ჯერ და მერე შევცვლი
-  if (type === 'processor' && 'ram') {
+
+  if (type === 'processor') {
     return (
       <div className="part-to-select-description">
         <div className="part-specification">
@@ -54,7 +55,7 @@ const ItemInfo = ({ item }) => {
 
         <div className="part-specification">
           <b className="font-4">დარჩენილი ერთეულები </b>
-          <span>{left}</span>
+          <span> {left}</span>
         </div>
       </div>
     );
@@ -64,17 +65,8 @@ const ItemInfo = ({ item }) => {
     return (
       <div className="part-to-select-description">
         <div className="part-specification">
-          <b className="font-4">ბრენდი</b>
-          <span> {model}</span>
-        </div>
-        <div className="part-specification">
-          <b className="font-4">სოკეტი </b>
-          <span> {socket}</span>
-        </div>
-
-        <div className="part-specification">
-          <b className="font-4">ჩიფსეტი </b>
-          <span> {chipset}</span>
+          <b className="font-4">სიხშირე </b>
+          <span> {frequency} Ghz</span>
         </div>
 
         <div className="part-specification">
@@ -93,8 +85,27 @@ const ItemInfo = ({ item }) => {
         </div>
 
         <div className="part-specification">
-          <b className="font-4">ფორმფაქტორი</b>
+          <b className="font-4">ფორმფაქტურა</b>
           <span> {formFactore}</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (type === 'ram') {
+    return (
+      <div className="part-to-select-description">
+        <div className="part-specification">
+          <b className="font-4">მეხსიერების ტიპი</b>
+          <span> {memoryType}</span>
+        </div>
+        <div className="part-specification">
+          <b className="font-4">მეხსიერების ტიპი</b>
+          <span> {memoryType}</span>
+        </div>
+        <div className="part-specification">
+          <b className="font-4">სიხშირე</b>
+          <span> {frequency} Ghz</span>
         </div>
       </div>
     );

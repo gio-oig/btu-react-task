@@ -24,7 +24,7 @@ const PcPart = ({ collectionName, pcPart }) => {
   return (
     <>
       {isNotSelected ? (
-        <div className="row d-flex">
+        <div className="row d-flex my-5">
           <div className="col-4 d-flex custify-content-center align-items-center">
             <div className="image-container align-items-center">
               <img src={pcPart.svg} />

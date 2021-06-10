@@ -50,52 +50,10 @@ const PopupItem = ({ item, selectedItem, closePopup, openPopup }) => {
             <h1 className="font-4">{item.name}</h1>
           </div>
 
-          <div className="computer-part-specifications-container visible">
-            <div className="row">
-              <div className="col-sm-9 part-specifications">
-                <div className="part-specification">
-                  <b className="font-4">სოკეტი </b>
-                  <span> LGA 1200</span>
-                </div>
-
-                <div className="part-specification">
-                  <b className="font-4">სიხშირე </b>
-                  <span> 3.7 Ghz</span>
-                </div>
-
-                <div className="part-specification">
-                  <b className="font-4">ბირთვები </b>
-                  <span> 10</span>
-                </div>
-
-                <div className="part-specification">
-                  <b className="font-4">ტექნოლოგიური პროცესი </b>
-                  <span> 45nm</span>
-                </div>
-
-                <div className="part-specification">
-                  <b className="font-4">მდგომარეობა </b>
-                  <span className="font-4"> ახალი</span>
-                </div>
-
-                <div className="part-specification">
-                  <b className="font-4">საწყობის ტიპი </b>
-                  <span className="font-4"> მარაგშია</span>
-                </div>
-
-                <div className="part-specification">
-                  <b className="font-4">დარჩენილი ერთეულები </b>
-                  <span> 1</span>
-                </div>
-              </div>
-              <div className="col-sm-3 part-additional-data">
-                <div className="part-current-price-container">
-                  <span className="part-current-price">{item.price} lari</span>
-                </div>
-                <div className="part-old-price-container">
-                  <span className="part-old-price invisible"></span>
-                </div>
-              </div>
+          <div className="col-sm-7">
+            <div className="part-to-select-container">
+              <h1 className="part-to-select-title font-4">{item.name}</h1>
+              <ItemInfo item={item} />
             </div>
           </div>
 

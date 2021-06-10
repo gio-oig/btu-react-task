@@ -12,6 +12,7 @@
 }
 
 .popup-container {
+  padding: 1rem;
   background-color: #fff;
   max-width: 70%;
   margin: 6rem auto;
